@@ -64,9 +64,16 @@ module.exports = { PManager: productManager }
 
 async function cosasAsincronicas() {
   const usuariosManager = new productManager("pruebas.json");
-  //await usuariosManager.addProducts("title", "description", "price", "thumbnail", "code", "stock");
-  //await usuariosManager.addProducts("title", "description", "price", "thumbnail", "code", "stock");
- // await usuariosManager.addProducts("producto", "una buena descripcion", 123, "sin imagen", 3, 3);
+  //await usuariosManager.addProducts("producto 1", "description", "price", "thumbnail", "code", "stock");
+  //await usuariosManager.addProducts("producto 2", "description", "price", "thumbnail", "code", "stock");
+  //await usuariosManager.addProducts("producto 3", "una buena descripcion", 123, "sin imagen", 3, 3);
+  //await usuariosManager.addProducts("producto 4", "description", "price", "thumbnail", "code", "stock");
+ // await usuariosManager.addProducts("producto 5", "description", "price", "thumbnail", "code", "stock");
+ // await usuariosManager.addProducts("producto 6", "una buena descripcion", 123, "sin imagen", 3, 3);
+  //await usuariosManager.addProducts("producto 7", "description", "price", "thumbnail", "code", "stock");
+ // await usuariosManager.addProducts("producto 8", "description", "price", "thumbnail", "code", "stock");
+  //await usuariosManager.addProducts("producto 9", "una buena descripcion", 123, "sin imagen", 3, 3);
+ //await usuariosManager.addProducts("producto 9", "una buena descripcion", 123, "sin imagen", 3, 3);
   //await usuariosManager.deleteProduct(3);
 
   //const producto = await usuariosManager.updateProduct(1, "title", "probando un nuevo titulo"  );
