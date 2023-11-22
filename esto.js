@@ -7,15 +7,22 @@ const port = 8080
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const productos = new PManager ("./pruebas.json")
+const productManager = new PManager ("./pruebas.json")
 
-app.get('/productos',   async (req, res) => {
+app.get("/products", async  (req, res) => {
     let devolver = req.query;
-      const productosADevolver= await productos.getProducts();    
-    res.send({productos});
+    const products = await productManager.getProducts();
+    res.send({products});
   });
+
+  //app.get("/products/:id", async  (req, res) => {
+    
+    //const id = req.params.id;
+    //const encontrados = products.find((item) => item.id === id);
+    //res.send({encontrados});
+  //});
     
 
   app.listen(port, () => {
-    console.log(productos)
+    console.log(`Example app listening on port ${port}`)
   })
