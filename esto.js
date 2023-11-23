@@ -22,14 +22,16 @@ app.get("/products", async (req, res) => {
 });
 
  
-  app.get("/products/:id",   (req, res) => {
-    
+app.get("/productos/:id", async (req, res) => {
+  try {
     const id = req.params.id;
-    const products =  productManager.getProductsById(id);
-    
-    res.send({products});
-  });
-    
+    const productos = await productManager.getProductsById(id);
+    res.send({ productos });
+  } catch (e) {
+    console.error('Error al recuperar productos:', e);
+    res.send({ error: 'Se produjo un error al recuperar productos.' });
+  }
+});
 
   app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)

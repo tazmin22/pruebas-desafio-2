@@ -32,7 +32,7 @@ class productManager {
 
   async getProductsById(id) {
     for (const product of this.products) {
-      if (product.id === id) {
+      if (product.id == id) {
         return product;
       }
     }
@@ -64,8 +64,10 @@ module.exports = { PManager: productManager }
 
 async function cosasAsincronicas() {
   const usuariosManager = new productManager("pruebas.json");
-  //await usuariosManager.addProducts("producto 1", "description", "price", "thumbnail", "code", "stock");
-  //await usuariosManager.addProducts("producto 2", "description", "price", "thumbnail", "code", "stock");
+  const producto = await usuariosManager.getProductsById(1);
+console.log(producto);
+  await usuariosManager.addProducts("producto 1", "description", "price", "thumbnail", "code", "stock");
+  await usuariosManager.addProducts("producto 2", "description", "price", "thumbnail", "code", "stock");
   //await usuariosManager.addProducts("producto 3", "una buena descripcion", 123, "sin imagen", 3, 3);
   //await usuariosManager.addProducts("producto 4", "description", "price", "thumbnail", "code", "stock");
  // await usuariosManager.addProducts("producto 5", "description", "price", "thumbnail", "code", "stock");
