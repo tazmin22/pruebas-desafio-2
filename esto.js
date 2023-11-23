@@ -22,7 +22,7 @@ app.get("/products", async (req, res) => {
 });
 
  
-app.get("/productos/:id", async (req, res) => {
+app.get("/products/:id", async (req, res) => {
   try {
     const id = req.params.id;
     const productos = await productManager.getProductsById(id);

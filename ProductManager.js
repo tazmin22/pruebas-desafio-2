@@ -31,7 +31,9 @@ class productManager {
   }
 
   async getProductsById(id) {
-    for (const product of this.products) {
+      const products = await this.getProducts();
+      for (const product of products)
+     {
       if (product.id == id) {
         return product;
       }
@@ -62,12 +64,12 @@ class productManager {
 };
 module.exports = { PManager: productManager }
 
-async function cosasAsincronicas() {
-  const usuariosManager = new productManager("pruebas.json");
-  const producto = await usuariosManager.getProductsById(1);
-console.log(producto);
-  await usuariosManager.addProducts("producto 1", "description", "price", "thumbnail", "code", "stock");
-  await usuariosManager.addProducts("producto 2", "description", "price", "thumbnail", "code", "stock");
+//async function cosasAsincronicas() {
+  //const usuariosManager = new productManager("pruebas.json");
+  //const producto = await usuariosManager.getProductsById(1);
+//console.log(producto);
+  //await usuariosManager.addProducts("producto 1", "description", "price", "thumbnail", "code", "stock");
+  //await usuariosManager.addProducts("producto 2", "description", "price", "thumbnail", "code", "stock");
   //await usuariosManager.addProducts("producto 3", "una buena descripcion", 123, "sin imagen", 3, 3);
   //await usuariosManager.addProducts("producto 4", "description", "price", "thumbnail", "code", "stock");
  // await usuariosManager.addProducts("producto 5", "description", "price", "thumbnail", "code", "stock");
@@ -81,6 +83,6 @@ console.log(producto);
   //const producto = await usuariosManager.updateProduct(1, "title", "probando un nuevo titulo"  );
   //const producto1 = await usuariosManager.updateProduct(1, "description", "probando una nueva descripcion" );
   //console.log(producto);
-}
+//}
 
-return cosasAsincronicas();
+//return cosasAsincronicas();
